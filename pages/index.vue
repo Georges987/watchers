@@ -1,9 +1,7 @@
 <template>
     <div>
-        <NuxtLoadingIndicator
-            color="black"
-            :duration="200"
-        />
+        <div class="title text-xl w-20 bg-red-400">Hello the world</div>
+        <TTY />
     </div>
 </template>
 

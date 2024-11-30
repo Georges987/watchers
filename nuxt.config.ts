@@ -8,16 +8,15 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/tailwindcss',
     'nuxt-file-storage',
     '@nuxtjs/google-fonts',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/device',
     '@hypernym/nuxt-anime',
-    'dayjs-nuxt',
     'nuxt-openapi-docs-module',
-    'nuxt-aos',
+    '@nuxt/ui',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -31,12 +30,18 @@ export default defineNuxtConfig({
   anime: {
     composables: true
   },
-  
-  // googleFonts: {
-  //   families: {
-  //     Roboto: true
-  //   }
-  // },
+  spaLoadingTemplate: 'components/Loading.vue',
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+  googleFonts: {
+    families: {
+      Roboto: true
+    }
+  },
   vite: {
     vue: {
       template: {
