@@ -12,14 +12,15 @@ useHead
 </script>
 <template>
   <div>
-    <NuxtLoadingIndicator />
-    <NuxtRouteAnnouncer>
-      <template #default="{ message }">
-        <p>{{ message }} was loaded.</p>
-      </template>
-    </NuxtRouteAnnouncer>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <div class="hidden lg:block">
+      <NuxtLoadingIndicator />
+      <NuxtRouteAnnouncer />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </div>
+    <div class="lg:hidden text-2xl font-bold px-4 text-center h-screen flex flex-col justify-center items-center">
+      Les jouets ne sont pas autorisés. Veuillez acheter un ordinateur.
+    </div>
   </div>
 </template>

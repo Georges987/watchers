@@ -1,6 +1,5 @@
 // import this after install `@mdi/font` package
 import '@mdi/font/css/materialdesignicons.css'
-
 import 'vuetify/styles'
 import { createVuetify, type DateInstance, type DefaultsInstance, type DisplayInstance, type GoToInstance, type IconAliases, type IconSet, type LocaleInstance, type LocaleMessages, type LocaleOptions, type ThemeInstance } from 'vuetify'
 import type { App } from 'vue'

@@ -44,10 +44,16 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13(typescript@5.7.2))
+      vue-writer:
+        specifier: ^2.0.2
+        version: 2.0.2(vue@3.5.13(typescript@5.7.2))
     devDependencies:
       '@hypernym/nuxt-anime':
         specifier: ^2.1.1
         version: 2.1.1
+      '@types/vue-writer':
+        specifier: ^1.2.0
+        version: 1.2.0(typescript@5.7.2)
       nuxt-file-storage:
         specifier: ^0.2.9
         version: 0.2.9(magicast@0.3.5)(rollup@4.27.4)
@@ -1002,6 +1008,9 @@ packages:
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
+  '@types/vue-writer@1.2.0':
+    resolution: {integrity: sha512-wZFLQBme71QB914WAAc65MrvXM5g1yzrfVE3OH71gtknUNlxWqFfot9PrDLu0elXU09ynz/NU72g5v+aYpxCSw==}
 
   '@types/web-bluetooth@0.0.20':
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
@@ -3727,6 +3736,12 @@ packages:
     peerDependencies:
       vue: ^3.2.0
 
+  vue-writer@2.0.2:
+    resolution: {integrity: sha512-k3Zos5f86REHoY6XRGjEHArUsd7EjUAUu0ehpPWnkHzbc9nPmzboZfw3PmPe9thN8L/QAJve69rHcUU+llFM/g==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      vue: ^3.4.21
+
   vue@3.5.13:
     resolution: {integrity: sha512-wmeiSMxkZCSc+PM2w2VRsOYAZC8GdipNFRTsLSfodVqI9mbejKeXEGr8SckuLnrQPGe3oJN5c3K0vpoU9q/wCQ==}
     peerDependencies:
@@ -4946,6 +4961,12 @@ snapshots:
   '@types/trusted-types@2.0.7':
     optional: true
 
+  '@types/vue-writer@1.2.0(typescript@5.7.2)':
+    dependencies:
+      vue: 3.5.13(typescript@5.7.2)
+    transitivePeerDependencies:
+      - typescript
+
   '@types/web-bluetooth@0.0.20': {}
 
   '@unhead/dom@1.11.13':
@@ -5134,7 +5155,7 @@ snapshots:
 
   '@vue/shared@3.5.13': {}
 
-  '@vuetify/loader-shared@2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.4(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2)))':
+  '@vuetify/loader-shared@2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.4)':
     dependencies:
       upath: 2.0.1
       vue: 3.5.13(typescript@5.7.2)
@@ -7927,7 +7948,7 @@ snapshots:
 
   vite-plugin-vuetify@2.0.4(vite@5.4.11(@types/node@22.10.1)(sass@1.81.0)(terser@5.36.0))(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.4):
     dependencies:
-      '@vuetify/loader-shared': 2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.4(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2)))
+      '@vuetify/loader-shared': 2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.4)
       debug: 4.3.7(supports-color@9.4.0)
       upath: 2.0.1
       vite: 5.4.11(@types/node@22.10.1)(sass@1.81.0)(terser@5.36.0)
@@ -7983,6 +8004,10 @@ snapshots:
   vue-router@4.5.0(vue@3.5.13(typescript@5.7.2)):
     dependencies:
       '@vue/devtools-api': 6.6.4
+      vue: 3.5.13(typescript@5.7.2)
+
+  vue-writer@2.0.2(vue@3.5.13(typescript@5.7.2)):
+    dependencies:
       vue: 3.5.13(typescript@5.7.2)
 
   vue@3.5.13(typescript@5.7.2):

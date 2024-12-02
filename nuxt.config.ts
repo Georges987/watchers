@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
-    // '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss',
     'nuxt-file-storage',
     '@nuxtjs/google-fonts',
     '@pinia/nuxt',
@@ -16,7 +16,6 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@hypernym/nuxt-anime',
     'nuxt-openapi-docs-module',
-    '@nuxt/ui',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -24,6 +23,11 @@ export default defineNuxtConfig({
       })
     },
   ],
+  tailwindcss: {
+    config: {
+      
+    }
+  },
   fileStorage: {
     mount: './public/uploads',
   },
