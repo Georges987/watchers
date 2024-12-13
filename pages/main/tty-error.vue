@@ -189,5 +189,7 @@ const executeCommand = () => {
         command.value = '';
     }
     load.value = true
+    // scroll to bottom 0
+    
 };
 </script>

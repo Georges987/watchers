@@ -118,70 +118,7 @@ onMounted(() => {
 
 <template>
     <div id="base" class="h-screen relative text-black flex flex-col w-full bg-black">
-        <div class="h-full w-full">
-            <VueDraggableResizable @dblclick="toogleOnFocus(process.id)" v-for="process in proStore.processes"
-                :key="process.id" :w="600" :h="400" :parent="true">
-                <Window :process="process" />
-            </VueDraggableResizable>
-            <VueDraggableResizable v-if="proStore.currentProcess" :w="600" :h="400" :parent="true">
-                <Window :process="proStore.currentProcess" />
-            </VueDraggableResizable>
-            <v-dialog transition="v-slide-y-transition" :opacity="0" width="600" v-model="showModal">
-                <div class="absolute -top-[225px] h-[600px] w-[600px] rounded-lg p-6 bg-white">
-                    <div class="font-bold text-primary-100 text-lg my-2">
-                        My Applications
-                    </div>
-                    <hr>
-                    <v-text-field class="w-full my-4" v-model="search" prepend-inner-icon="mdi-magnify" type="search"
-                        placeholder="Search for an application" outlined dense clearable></v-text-field>
-                    <div class="h-[300px] overflow-auto grid grid-cols-3 gap-4">
-                        <div v-for="app in applis" :key="app.name"
-                            class="hover:text-primary-100 h-[100px] duration-200 ease-in-out transition-colors p-5 flex justify-center flex-col items-center select-none col-span-1"
-                            v-ripple @click="launchApp(app)">
-                            <v-icon :icon="app.icon"></v-icon>
-                            <div>
-                                {{ app.name }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-between mt-10">
-                        <Power />
-                        <v-avatar color="grey" @click="launchApp({
-                            name: 'Settings',
-                            icon: 'mdi-cog',
-                            component: Settings,
-                        })"
-                            image="https://images.pexels.com/photos/8638618/pexels-photo-8638618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></v-avatar>
-                    </div>
-                </div>
-            </v-dialog>
-        </div>
-        <footer class="flex justify-between space-x-4 w-full pb-4 px-4">
-            <div class="w-1/4 flex px-3 py-2 space-x-3 bg-secondary-100 rounded-md">
-                <div class="p-2 rounded-lg" v-ripple>
-                    <SuperIcon @click="toogleModal" />
-                </div>
-            </div>
-            <div class="w-1/2 bg-secondary-100 justify-center text-sm flex rounded-lg">
-                <div class="my-auto">
-                    <slot /> Ashborn Arc, v0.0.3 | Limited.
-                </div>
-            </div>
-            <div class="flex justify-between font-bold w-1/4 px-3 py-2 bg-secondary-100 text-lg rounded-lg">
-                <div class="my-auto text-sm p-2 select-none" v-ripple>
-                    {{ timer.hour }} | {{ timer.date }}
-                </div>
-                <div class="my-auto p-2 rounded-lg" v-ripple>
-                    <UtilsIcon />
-                </div>
-                <div @click="notif_dialog = !notif_dialog" class="my-auto rounded-full select-none" v-ripple>
-                    <div class="absolute text-sm text-secondary-100 mx-2 my-1.5">
-                        52
-                    </div>
-                    <NotifAvatarIcon />
-                </div>
-            </div>
-        </footer>
+        <slot></slot>
     </div>
 </template>
 

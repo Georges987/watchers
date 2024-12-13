@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-file-storage',
+    '@primevue/nuxt-module',
     '@nuxtjs/google-fonts',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
@@ -25,8 +26,11 @@ export default defineNuxtConfig({
   ],
   tailwindcss: {
     config: {
-      
+
     }
+  },
+  primevue: {
+    autoImport: true,
   },
   fileStorage: {
     mount: './public/uploads',

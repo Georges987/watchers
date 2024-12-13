@@ -1,30 +1,42 @@
 <script setup lang="ts">
-const model = ref(true)
+import type { IProcess } from '~/shared/models';
+
+defineProps({
+    process: {
+        type: Object as () => IProcess,
+        required: true
+    }
+})
+
+const proStore = useProcessStore()
 </script>
 
 <template>
-    <v-dialog v-model="model">
-        <v-card>
-            <div>
-                <div
-                    class=""
-                >
-                    <v-btn
-                        color="red"
-                        rounded="full"
-                    >x</v-btn>
-                    <v-btn
-                        color="yellow"
-                        rounded="full"
-                    >o</v-btn>
-                    <v-btn
-                        color="green"
-                        rounded="full"
-                    >-</v-btn>
+    <v-card height="100%" width="100%" color="black">
+        <div>
+            <div class="flex justify-between py-2 px-4">
+                <div class="flex space-x-4">
+                    <div
+                        @click="proStore.removeProcess(process.id)"
+                        class="rounded-full bg-red-500 transition-colors ease-in-out duration-300 hover:bg-red-700 h-4 w-4">
+                    </div>
+                    <div
+                        class="rounded-full bg-yellow-500 transition-colors ease-in-out duration-300 hover:bg-yellow-700 h-4 w-4">
+                    </div>
+                    <div
+                        class="rounded-full bg-green-500 transition-colors ease-in-out duration-300 hover:bg-green-700 h-4 w-4">
+                    </div>
                 </div>
-                <div></div>
-                <div></div>
+                <div class="font-bold mr-4">
+                    {{ process.name }}
+                </div>
             </div>
-        </v-card>
-    </v-dialog>
+        </div>
+
+        <Component :is="process.program.components" />
+
+        <div class="absolute bottom-2 w-full px-4">
+            by Georges AYENI
+        </div>
+    </v-card>
 </template>
